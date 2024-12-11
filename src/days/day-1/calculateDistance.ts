@@ -1,6 +1,3 @@
-import { open } from 'node:fs/promises';
-import * as path from 'node:path';
-
 export const calculateDistance = (leftList: number[], rightList: number[]) => {
   const sortedLeftList = leftList.toSorted((a, b) => a - b)
   const sortedRightList = rightList.toSorted((a, b) => a - b)
