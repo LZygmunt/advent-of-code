@@ -1,7 +1,6 @@
-import {calculateDistance} from './calculateDistance.js';
+import {calculateDistance} from './calculateDistance';
+import { leftListExample, rightListExample } from './example-input';
 
-it('should return 11 for examples input', () => {
-  const leftListExample = [3,4,2,1,3,3]
-  const rightListExample = [4,3,5,3,9,3]
+it('should return 11 for examples input', async () => {
   expect(calculateDistance(leftListExample, rightListExample)).toBe(11)
 })
