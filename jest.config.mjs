@@ -2,7 +2,7 @@
  * For a detailed explanation regarding each configuration property, visit:
  * https://jestjs.io/docs/configuration
  */
-import { createDefaultEsmPreset, pathsToModuleNameMapper } from 'ts-jest';
+import { createDefaultEsmPreset } from 'ts-jest';
 
 const config = createDefaultEsmPreset({
   tsconfig: 'tsconfig.json',
