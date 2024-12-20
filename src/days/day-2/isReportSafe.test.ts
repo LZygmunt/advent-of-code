@@ -10,6 +10,6 @@ ${ [ 8, 6, 4, 4, 1 ] } | ${ false }
 ${ [ 1, 3, 6, 7, 9 ] } | ${ true }
 ${ [ 3, 1, 4, 7, 9 ] } | ${ false }
 `// @ts-ignore
-  ( `$input is${'$expected' === 'true' ? '': ' not'} gradually increasing`, ( { input, expected } ) => {
+  ( `$input is ${'$expected' === 'true' ? '': 'un'}safe`, ( { input, expected } ) => {
     expect( isReportSafe( input ) ).toBe( expected );
   } );
