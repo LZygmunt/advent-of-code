@@ -8,7 +8,7 @@ type AreAllDistanceWithinRange = ( list: List ) => boolean
 
 const areAllDistanceWithinRange: AreAllDistanceWithinRange = ( list ) =>
   list.every( ( level, index ) => {
-    if ( index === list.length - 1 || index === 0 ) {
+    if ( index === list.length - 1 ) {
       return true;
     }
 
