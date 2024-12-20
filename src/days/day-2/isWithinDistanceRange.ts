@@ -1,10 +1,14 @@
-type IsWithinDistanceRange = (a: number, b: number, minDistance: number, maxDistance: number) => boolean
+type IsWithinDistanceRange = ( a: number, b: number, minDistance: number, maxDistance: number ) => boolean
 
 const isWithinDistanceRange: IsWithinDistanceRange = (
   a,
   b,
   minDistance,
   maxDistance,
-) => true
+) => {
+  const absoluteDistance = Math.abs( a - b );
 
-export default isWithinDistanceRange
+  return absoluteDistance >= minDistance && absoluteDistance <= maxDistance;
+};
+
+export default isWithinDistanceRange;

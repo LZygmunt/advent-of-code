@@ -1,10 +1,23 @@
 import type { List } from './types.ts';
+import isWithinDistanceRange from './isWithinDistanceRange.ts';
 
-const MIN_DISTANCE = 2
-const MAX_DISTANCE = 3
+const MIN_DISTANCE = 1;
+const MAX_DISTANCE = 3;
 
-type AreAllDistanceWithinRange = (input: List) => true
+type AreAllDistanceWithinRange = ( list: List ) => boolean
 
-const areAllDistanceWithinRange: AreAllDistanceWithinRange = () => true
+const areAllDistanceWithinRange: AreAllDistanceWithinRange = ( list ) =>
+  list.every( ( level, index ) => {
+    if ( index === list.length - 1 || index === 0 ) {
+      return true;
+    }
 
-export default areAllDistanceWithinRange
+    return isWithinDistanceRange(
+      level,
+      list[ index + 1 ],
+      MIN_DISTANCE,
+      MAX_DISTANCE,
+    );
+  } );
+
+export default areAllDistanceWithinRange;

@@ -1,5 +1,11 @@
 import type { OrderChecker } from './types.ts';
 
-const isIncreasing: OrderChecker = (input) => true
+const isIncreasing: OrderChecker = ( list ) => list.every( ( level, index ) => {
+  if ( index === list.length - 1 ) {
+    return true;
+  }
 
-export default isIncreasing
+  return level < list[ index + 1 ];
+} );
+
+export default isIncreasing;
