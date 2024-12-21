@@ -1,11 +1,10 @@
-import type { List } from './types.ts';
-import isReportSafe from './isReportSafe.ts';
+import type { List, ReportSafeChecker } from './types.ts';
 
-type CountSafeReports = ( reports: List[] ) => number;
+type CountSafeReports = ( reports: List[], reportSafeChecker: ReportSafeChecker ) => number;
 
-const countSafeReports: CountSafeReports = ( reports ) =>
+const countSafeReports: CountSafeReports = ( reports, reportSafeChecker ) =>
   reports.reduce(
-    ( totalSafeReports, report ) => isReportSafe( report )
+    ( totalSafeReports, report ) => reportSafeChecker( report )
       ? totalSafeReports + 1
       : totalSafeReports,
     0,
