@@ -4,21 +4,25 @@ import countSafeReports from './countSafeReports.ts';
 import isReportSafe from './isReportSafe.ts';
 import isReportSafeWithProblemDampener from './isReportSafeWithProblemDampener.ts';
 
-const reports = [];
-await readFileLineByLine(
-  path.join( import.meta.dirname, './input' ),
-  ( line ) => {
-    const report = line.split( ' ' ).map( Number );
+export default async () => {
+  console.log( '-----------------DAY-2-----------------' );
 
-    reports.push( report );
-  },
-);
+  const reports = [];
+  await readFileLineByLine(
+    path.join( import.meta.dirname, './input' ),
+    ( line ) => {
+      const report = line.split( ' ' ).map( Number );
 
-const totalSafeReports = countSafeReports( reports, isReportSafe );//287
-console.log( totalSafeReports );
+      reports.push( report );
+    },
+  );
 
-const totalSafeReportsWithProblemDampener = countSafeReports(
-  reports,
-  isReportSafeWithProblemDampener,
-);//287
-console.log( totalSafeReportsWithProblemDampener );
+  const totalSafeReports = countSafeReports( reports, isReportSafe );//287
+  console.log( totalSafeReports );
+
+  const totalSafeReportsWithProblemDampener = countSafeReports(
+    reports,
+    isReportSafeWithProblemDampener,
+  );//287
+  console.log( totalSafeReportsWithProblemDampener );
+}
