@@ -1,6 +1,8 @@
 import { readFileLineByLine } from '#utils/readFileLineByLine.ts';
 import path from 'node:path';
-import convertToGrid from './convertToGrid.js';
+import convertToGrid from './convertToGrid.ts';
+import { exampleInput } from './example-input.ts';
+import gatherPossibleLinesToCrossOut from './gatherPossibleLinesToCrossOut.ts';
 
 export default async () => {
   console.log( '-----------------DAY-4-----------------' );
@@ -13,5 +15,11 @@ export default async () => {
     },
   );
 
-  const crosswordGrid = convertToGrid(crossword)
+  const crosswordGrid = convertToGrid(exampleInput)
+
+  const SEARCH_WORD = 'XMAS'
+  const allPossibleLinesToCrossOut = gatherPossibleLinesToCrossOut(crosswordGrid)
+
+  // const total = countOccurrences(crosswordGrid)
+  // console.log( total ); //
 };
